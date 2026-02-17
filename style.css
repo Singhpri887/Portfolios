@@ -1,76 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
-.Protfolio-container{
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-}
-.navlist{
-    display: flex;
-    gap: 3.5rem;
-    height: 15vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-}
-.navlist li{
-    list-style: none;
-}
-.navlist li a{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1rem;
-    color: #fff;
-    position: relative;
-}
-.left-container, .right-container{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-}
-.left-container{
-    background: #262525;
-    width: 70%;
-    padding-left: 3rem;
 
+html{
+    overflow-x: hidden;
 }
-.right-container{
-    background: linear-gradient(-45deg, #3877FF, #262525 70%);
-    width: 30%;
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(-40deg, #262525, #3877FF 125%);
+    /* background: linear-gradient(-20deg, #3877FF, #262525 40%); */
 }
-.icons .fa-brands{
-    color: #bbb;
-    font-size: 1.7rem;
+
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
 }
-.icons{
+
+
+.nav-container{
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-right: 30%;
+}
+
+.logo span{
+    color: #5DB9EE;
+    text-shadow: 0 0 10px #fff(109,67,0);
+    /* margin-right: 20%; */
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+.nav-container .links {
+    display: flex;
     gap: 3rem;
+    align-items: center;
 }
-.content{
-    margin-left: 4rem;
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transform: 0.3s linear;
 }
-.content .intro{
-    font-size: 1.5rem;
-    color: #fff;
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #262525;
+    text-shadow: 0 0 10px #fff(109,67,0);
+    transition: 0.2s linear;
 }
-.content .intro span{
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid #5DB9EE;
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn a{
+    color: white;
+    transition: 0.3s linear;
+}
+
+.nav-container .contact-btn:hover, .nav-container .contact-btn:hover a{
+    background-color: #5DB9EE;
+    color: black;
+}
+
+.nav-container .links a:hover{
     color: #5DB9EE;
     text-shadow: 0 0 10px #fff(109,67,0);
 }
+
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover{
+    background-color: rgb(109,67, 0);
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container .image{
+    z-index: -1;
+    width: 50%;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+.main-container .content{
+    color: black;
+    width: 40%;
+    min-height: 100px;
+}
+
+.content h1{
+    /* font-size: clamp(1rem, 2rem + 5vw, 3rem); */
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.content h1 span{
+    color: #5DB9EE;
+    text-shadow: 0 0 10px #fff(109,67,0);
+}
+
 .content .typewriter{
     font-weight: 600;
-    font-size: clamp(1rem, 1rem + 5vw,2rem);
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
 }
+
 .content .typewriter span{
     color: #5DB9EE(109,67,0);
     font-size: 2.5rem;
@@ -80,18 +190,21 @@
     color: #5DB9EE;
     text-shadow: 0 0 10px #fff(109,67,0);
 }
+
 .typewriter span::before{
-    content: " Web Developer";
+    content: "Developer";
     animation: words 15s infinite;
 }
+
 .typewriter span::after{
     content: "";
     position: absolute;
-    width:calc(100% + 8px);
+    width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid white;
-    animation: cursor 0.6s linear infinite;
+    animation:  cursor 0.6s linear infinite;
 }
+
 @keyframes cursor {
     to{
         border-left: 3px solid #262525;
@@ -99,93 +212,108 @@
 }
 
 @keyframes words {
-    0%,33%{
-        content: " Web Developer";
+    0%, 33%{
+        content: "Web Developer";
     }
     40%, 66%{
-        content: "Front-end";
+        content: "Front-End";
         color: #fff;
     text-shadow: 0 0 10px #fff(109,67,0);
     }
 }
-.content .detail{
-    font-size: 1.1rem;
+
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
     color: #fff;
     text-shadow: #5DB9EE;
-    max-width: 38rem;
-    margin: 1.1rem 0 3rem 0;
-    line-height: 1.8rem;
+    margin: 10px 0;
 }
-.btn-container button{
-    border: .1rem solid #5DB9EE;
-    font-size: 1.1rem;
-    padding: .8rem 1.5rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: .5s ease;
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid rgb#5DB9EE(109,67,0);
+    border-radius: 50%;
+    color:rgb#5DB9EE(109,67,0);
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
 }
-button:nth-child(1){
-    background: #5DB9EE;
-    color: #262525;
+
+.social-links i:hover{
+    scale: 1.3;
+    color: white;
+    background-color: rgb(109,67, 0);
+    filter: drop-shadow(0 0 10px rgb(109,67,0));
 }
-button:nth-child(2){
-    background: transparent;
-    color: #5DB9EE;
-    margin-left: 2rem;
+
+.btn button{
+    width: 40%;
+    height: 6vh;
+    margin: 30px;
+    background-color: rgb(109,67, 0);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
 }
-button:nth-child(1):hover{
-    background: transparent;
-    color: #5DB9EE;
+
+.btn button:hover{
+ scale: 1.1;
+ color: rgb(109,67, 0);
+ border: 2px solid rgb(109,67, 0);
+ background-color: transparent;
+ font-weight: 700;
+ box-shadow: 0 0 40px rgb(109,67, 0);
 }
-button:nth-child(2):hover{
-    background: #5DB9EE;
-    color: #262525;
-}
-.icons .fa-brands:hover{
-    cursor: pointer;
-    background: linear-gradient(#fff, #3877FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.design .circle{
-    aspect-ratio: 1;
-    position: absolute;
-    border-radius: 55%;
-    top: 55%;
-    left: 74%;
-    transform: translate(-50%, -50%);
-}
-.circle:nth-child(1){
-    background: linear-gradient(90deg, transparent 50%, #262525 60%);
-    width: 38rem;
-}
-.circle:nth-child(2){
-    width: 30rem;
-    background-image: url("profile.png");
-    background-size: 118%;
-    background-repeat: no-repeat;
-    border: 1rem solid white;
-    box-shadow: 
-    0 0 1rem #fff,
-    inset 0 0 1rem #fff,
-    0 0 2rem #3877FF,
-    inset 0 0 2rem #3877FF,
-    0 0 4rem #3877FF,
-    inset 0 0 4rem #3877FF;
-}
-.navlist li a::after, .navlist .active::after{
-    content: "";
-    position: absolute;
-    background: #fff;
-    width: 100%;
-    height: .1rem;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform .5s;
-}
-.navlist li a:hover::after, .navlist .active::after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
+
+@media (max-width:884px) {
+    body{
+        overflow-y: visible;
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg,.cancel{
+        display: block;
+    }
+
+    .main-container .content{
+        width: 80%;
+    }
+
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+    .cancel{
+        color: white;
+    }
+
+    .main-container .image{
+        width: 80%;
+        margin-bottom: 0px;
+    }
 }
